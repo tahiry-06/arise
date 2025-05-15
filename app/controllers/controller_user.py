@@ -64,7 +64,7 @@ def delete():
         db_user.delete()
         return make_response(jsonify({
             'message': f'User {db_user.username} deleted successfully',
-            'redirectURL': f'/?message={message.replace(' ', '+')}'
+            'redirectURL': f"/?message={message.replace(' ', '+')}"
             })), 200
 
 def logout():
@@ -72,7 +72,7 @@ def logout():
     message = 'Successfully logged out.'
     response = make_response(jsonify({
         'message': 'Successfully logged out.',
-        'redirectURL': f'/?message={message.replace(' ', '+')}'
+        'redirectURL': f"/?message={message.replace(' ', '+')}"
     }))
     response.set_cookie('access_token', '', expires=0, httponly=True, secure=True, samesite='Strict')
     response.set_cookie('refresh_token', '', expires=0, httponly=True, secure=True, samesite='Strict')
