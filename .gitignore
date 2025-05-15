@@ -2,3 +2,7 @@
 /app/.env
 .vscode
 __pycache__
+/database_model_fix.py
+/credentials.txt
+/assets.ai
+/app/config

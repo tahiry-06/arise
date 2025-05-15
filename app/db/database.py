@@ -3,10 +3,15 @@ import time
 import datetime
 from mongoengine import connect
 from pymongo import MongoClient
-from app.config.config import MONGODB_URI
+# from app.config._config import MONGODB_URI
+import os
+from dotenv import load_dotenv
 
 # Global flag to prevent duplicate threads
 # reset_thread_started = False
+
+load_dotenv()
+MONGODB_URI = os.environ.get('MONGODB_URI')
 
 def connect_db():
     """Connect to MongoDB and start the background reset task (only once)."""
