@@ -1,2 +1,4 @@
 /venv/
 /app/.env
+.vscode
+__pycache__
