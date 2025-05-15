@@ -1,0 +1,162 @@
+<div class="setting-container">
+    <section class="side-bar">
+      <div class="side-bar-container">
+        <div class="account active">
+          <button type="button">
+              <div class="account-wrapper">
+                <span>circle-user</span>
+                <p>account</p>
+              </div>
+          </button type="button">
+        </div>
+
+        <div class="appearance ">
+            <button type="button">
+                <div class="appearance-wrapper">
+                  <span>paintbrush</span>
+                  <p>appearance</p>
+                </div>
+            </button type="button">
+        </div>
+
+        <div class="todo-setting ">
+            <button type="button">
+                <div class="todo-setting-wrapper">
+                  <span>list-check</span>
+                  <p>to-do</p>
+                </div>
+            </button type="button">
+        </div>
+      </div>
+    </section>
+
+    <section class="settings">
+        <div id="account" class="setting show-setting">
+            
+            <div class="setting-content">
+                <div class="setting-description">
+                    <h1>account settings.</h1>
+                    <p>manage your account.</p>
+                </div>
+
+                <div class="setting-main">
+                    <h2>main information.</h2>
+                    <div class="informations">
+
+                        <div class="detail">
+                            <p class="detail-title">display name</p>
+                            <div class="detail-field">
+                                <p class="name-display display"></p>
+                                <input type="text" name="name-edit" id="name-edit" autocomplete="off" >
+                                <button type="button" ><span>pen-line</span></button>
+                            </div>
+                        </div>
+
+                        <div class="detail">
+                            <p class="detail-title">username</p>
+                            <div class="detail-field">
+                                <p class="username-display display"></p>
+                                <input type="text" name="username-edit" id="username-edit" autocomplete="off" >
+                                <button type="button"><span>pen-line</span></button>
+                            </div>
+                        </div>
+
+                        <div class="detail">
+                            <div class="detail-label">
+                                <p class="detail-title">email</p>
+                                <span>badge-check</span>
+                            </div>
+                            <div class="detail-field">
+                                <p class="email-display display"></p>
+                                <input type="email" name="email-edit" id="email-edit" autocomplete="off" >
+                                <button type="button"><span>pen-line</span></button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="setting-pwd">
+                    <h2>password.</h2>
+                    <div class="setting-pwd-form">
+                        <button type="button">change password.</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setting-delete">
+                <div class="warnings">
+                    <h2>retire.</h2>
+                    <p>this action is irreversible, think well.</p>
+                </div>
+                <div class="del-btn">
+                    <button type="button">delete account.</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="appearance"  class="setting">
+            <div class="setting-content">
+            
+                <div class="setting-description">
+                    <h1>appearance.</h1>
+                    <p>customize your interface.</p>
+                </div>
+
+                <form id="appearance-form">
+                    <div class="setting-theme">
+                        <p>main appearance.</p>
+                        <div class="theme-select">
+                            <select name="theme" id="theme">
+                                <option value="light">light mode</option>
+                                <option value="dark">dark mode</option>
+                            </select>
+                        </div>
+                    </div>  
+
+                    <div class="setting-color">
+                        <p>theme.</p>
+                        <fieldset>
+                            <label for="default" class="hide-label">default</label>
+                            <input type="radio" name="theme" id="default" checked>
+
+                            <label for="red" class="hide-label">red</label>
+                            <input type="radio" name="theme" id="red">
+
+                            <label for="chill" class="hide-label">chill</label>
+                            <input type="radio" name="theme" id="chill">
+
+                            <label for="zen" class="hide-label">zen</label>
+                            <input type="radio" name="theme" id="zen">
+
+                            <label for="sunny" class="hide-label">sunny</label>
+                            <input type="radio" name="theme" id="sunny">
+
+                            <label for="fade" class="hide-label">fade</label>
+                            <input type="radio" name="theme" id="fade">
+
+                        </fieldset>
+                    </div>
+                    
+                
+                    <div class="setting-buttons">
+                        <button type="submit">save.</button>
+                        <button type="button">discard.</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="todo-setting" class="setting">
+            <div class="setting-description">
+                <h1>todo settings.</h1>
+                <p>this is meant to manage how your todos will behave, but not yet available.</p>
+            </div>
+            <div>
+                <h2>we are working on this feature. it will be available soon.</h2>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam optio quae dolore iure tempora odit ad iusto cumque voluptatem fugiat voluptates necessitatibus sunt provident fuga consequatur, consequuntur nihil iste perferendis recusandae aspernatur aliquam et ea ab. Doloremque autem nobis impedit?</p>
+            </div>
+        </div>
+    </section>
+</div>

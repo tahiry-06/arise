@@ -1,0 +1,347 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --first-color: #b4b4b8;
+  --second-color: #c7c8cc;
+  --third-color: #e3e1d9;
+  --fourth-color: #faf8f1;
+
+  --idle-light: #fff7d1;
+  --idle-dark: #ffd09b;
+  --idle-deep: #df9755;
+
+  --done-color-deep: #557c55;
+  --done-color-light: #a6cf98;
+  --done-color-bright: #f2ffe9;
+
+  --warn-color-deep: #ff8787;
+  --warn-color-light: #f8c4b4;
+
+  --invalid-dark: #ff2e54;
+  --invalid-light: #fff3f5;
+
+  --text-color: #333;
+  --text-color-light: #888;
+
+  --urgent-color: #ff9843;
+  --not-urgent-color: #3468c0;
+}
+
+body {
+  background-color: var(--fourth-color);
+  position: relative;
+}
+
+.main {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  font-family: "Atkinson Hyperlegible";
+  color: var(--text-color);
+}
+
+.welcome {
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 12px;
+  padding-top: 35%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+
+  transition: all 0.6s ease-in-out;
+}
+
+.reposition-welcome {
+  padding-top: 20%;
+}
+
+.welcome-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.welcome-info h1 {
+  line-height: 0.8;
+  font-size: clamp(36px, 12vw, 3.5rem);
+}
+
+.welcome-info p {
+  width: min(600px, 90%);
+  margin: 0 auto;
+  line-height: 1;
+  font-size: clamp(18px, 6vw, 2rem);
+  text-align: center;
+}
+
+.start-button {
+  transition: all 0.6s ease-in-out;
+}
+
+button {
+  border: none;
+  padding: 12px 24px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 15px;
+  color: #eee;
+  background-color: var(--idle-deep);
+  border-radius: 12px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 6px #33333322;
+}
+
+.sign-in-button button[type="button"],
+.sign-up-button button[type="button"] {
+  background-color: var(--first-color);
+  color: var(--fourth-color);
+}
+
+.forms {
+  width: 100%;
+  height: 450px;
+  position: relative;
+}
+
+.sign-in,
+.sign-up {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  width: min(360px, calc(100vw - 24px));
+  padding: 24px 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+
+  background-color: #fff;
+  border-radius: 24px;
+  box-shadow: 6px 6px 12px #33333311;
+  overflow: visible;
+
+  opacity: 1;
+  will-change: transform opacity;
+  transition: all 0.6s ease-in-out;
+}
+
+.invisible-sign-in {
+  opacity: 0;
+}
+
+.hide-sign-in {
+  transform: translate(-155%, 0);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.hide-sign-up {
+  transform: translate(55%, 0);
+  pointer-events: none;
+  opacity: 0;
+}
+
+.sign-in-form,
+.sign-up-form {
+  width: 100%;
+  padding: 12px;
+}
+
+.sign-in-form form,
+.sign-up-form form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.sign-in-form input,
+.sign-up-form input {
+  width: 100%;
+  padding: 12px;
+  padding-bottom: 6px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  color: var(--text-color);
+
+  border-bottom: var(--text-color-light) 2px solid;
+  transition: all 0.3s ease;
+}
+
+.sign-in-form form > div,
+.sign-up-form form > div {
+  position: relative;
+}
+
+.sign-in-form label,
+.sign-up-form label {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  transition: all 0.3s ease;
+}
+
+.sign-in-form input:focus,
+.sign-up-form input:focus {
+  outline: none;
+  transform: translateY(-3px);
+  border-bottom: var(--idle-deep) 2px solid;
+}
+
+.sign-in-form input:not(:placeholder-shown),
+.sign-up-form input:not(:placeholder-shown) {
+  border-bottom: var(--idle-deep) 2px solid;
+  color: var(--text-color-light);
+  background-color: var(--idle-light);
+}
+
+.sign-in-form input:focus + label,
+.sign-in-form input:not(:placeholder-shown) + label,
+.sign-up-form input:focus + label,
+.sign-up-form input:not(:placeholder-shown) + label {
+  transform: translateY(-27px);
+  font-size: 13px;
+  color: var(--idle-deep);
+}
+
+.sign-in-form input:not(:placeholder-shown):not(:focus) + label,
+.sign-up-form input:not(:placeholder-shown):not(:focus) + label {
+  transform: translateY(-24px);
+}
+
+.sign-in-button,
+.sign-up-button {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.sign-in-form input:not(:placeholder-shown):not(:focus):invalid + label,
+.sign-up-form input:not(:placeholder-shown):not(:focus):invalid + label {
+  color: var(--invalid-dark);
+}
+
+.sign-in-form input:not(:placeholder-shown):not(:focus):invalid,
+.sign-up-form input:not(:placeholder-shown):not(:focus):invalid {
+  border-bottom: var(--invalid-dark) 2px solid;
+  background-color: var(--invalid-light);
+  animation: invalid 0.3s ease-in-out;
+}
+
+@keyframes invalid {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-3px);
+  }
+
+  50% {
+    transform: translateX(3px);
+  }
+
+  75% {
+    transform: translateX(-3px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.si-error-message,
+.su-error-message {
+  display: flex;
+  justify-content: center;
+  transition: all 0.6s ease-in-out;
+}
+
+.si-error-message .message,
+.su-error-message .message {
+  text-align: center;
+  border-radius: 12px;
+  border: var(--invalid-dark) 2px solid;
+  color: var(--invalid-dark);
+  padding: 12px 24px;
+  background-color: var(--invalid-light);
+  transition: all 0.6s ease-in-out;
+}
+
+.hide-si-error,
+.hide-su-error {
+  height: 0;
+  opacity: 0;
+}
+
+.hide-start-button {
+  pointer-events: none;
+  transform: translateY(-48px);
+  opacity: 0;
+}
+
+.invalid-input {
+  /* .invalid-input + label { */
+  animation: invalid 0.3s ease-in-out;
+}
+
+.sign-in-form input.invalid-input,
+.sign-up-form input.invalid-input {
+  border-bottom: var(--invalid-dark) 2px solid;
+  background-color: var(--invalid-light);
+}
+
+.sign-up-form input.invalid-input + label,
+.sign-in-form input.invalid-input + label {
+  color: var(--invalid-dark);
+}
+
+.alert-message {
+  display: none;
+  position: fixed;
+  width: fit-content;
+
+  left: 50%;
+  top: 24px;
+  padding: 12px 24px;
+
+  transform: translate(-50%, 0);
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+  text-wrap: nowrap;
+  color: var(--done-color-deep);
+
+  border-radius: 12px;
+  border: 2px solid var(--done-color-deep);
+  background-color: var(--done-color-light);
+}

@@ -1,0 +1,191 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Font Awesome 100";
+  src: url("../fonts/Font\ Awesome\ 6\ Pro-Thin-100.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Font Awesome 300";
+  src: url("../fonts/Font\ Awesome\ 6\ Pro-Light-300.otf") format("opentype");
+}
+@font-face {
+  font-family: "Font Awesome 400";
+  src: url("../fonts/Font\ Awesome\ 6\ Pro-Regular-400.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Font Awesome 900";
+  src: url("../fonts/Font\ Awesome\ 6\ Pro-Solid-900.otf") format("opentype");
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --white: #fbfbfb;
+
+  --first-color: #b4b4b8;
+  --second-color: #c7c8cc;
+  --third-color: #e3e1d9;
+  --fourth-color: #faf8f1;
+
+  /* --idle-light: #fff7d1; */
+  --idle-light: #fef3e7;
+  /* --idle-dark: #ffd09b; */
+  --idle-dark: #fbe1c4;
+  /* --idle-deep: #df9755; */
+  --idle-deep: #ff9735;
+
+  --personal: #fae5fb;
+  --professional: #ececff;
+
+  --done-color-deep: #557c55;
+  --done-color-light: #a6cf98;
+  --done-color-bright: #a6cf9866;
+  /* --done-color-bright: #e9fff1; */
+
+  --warn-color-deep: #ff8787;
+  --warn-color-light: #f8c4b4;
+
+  /* --overdue: #f8c4b466; */
+  --overdue: #cecece66;
+
+  --invalid-dark: #ff2e54;
+  --invalid-light: #fff3f5;
+
+  --text-color: #333;
+  --text-color-mid: #666;
+  --text-color-light: #888;
+  --text-color-bright: #bbb;
+
+  --urgent-color: #ff8725;
+  --not-urgent-color: #3468c0;
+
+  --challenges-done: #fcf6c8;
+}
+
+body {
+  background-color: #fff;
+}
+
+.main,
+#root {
+  padding-bottom: 52px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  color: var(--text-color);
+
+  font-family: "Atkinson Hyperlegible";
+
+  transition: all 0.3s ease;
+}
+
+.main {
+  padding-top: 80px;
+  display: none;
+}
+
+#root {
+  padding-bottom: 0;
+  /* background-color: var(--white); */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  height: 56px;
+  width: 100%;
+  padding: 0 24px;
+
+  display: flex;
+  justify-content: center;
+  background-color: var(--text-color);
+
+  z-index: 10000;
+}
+
+span {
+  font-family: "Font Awesome 400";
+
+  transition: all 0.3s ease-in-out;
+}
+
+header .menu {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  color: var(--fourth-color);
+}
+
+header .logo-text {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header .menu nav ul {
+  display: flex;
+  gap: 24px;
+}
+
+header .menu nav ul li {
+  list-style: none;
+}
+
+header .menu nav ul li button {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  text-decoration: none;
+  color: var(--fourth-color);
+
+  cursor: pointer;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 2rem;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 1.3rem;
+}
+
+.main-container,
+.setting-container {
+  max-width: 960px;
+  width: 100%;
+
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+
+  position: relative;
+}

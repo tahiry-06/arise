@@ -1,0 +1,1098 @@
+section,
+.modal div.create-challenge,
+.edit-challenge {
+  border-radius: 16px;
+  padding: 40px 16px;
+
+  background-color: var(--fourth-color);
+  box-shadow: 3px 3px 6px #33333333;
+
+  opacity: 0.85;
+
+  transition: all 0.3s ease-in-out;
+}
+
+section:not(:first-child):hover,
+.daily-sticky:hover {
+  opacity: 1;
+}
+
+.welcome {
+  grid-column: 1 / 10;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.welcome-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.daily-sticky {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 24px 16px;
+  border-radius: 16px;
+
+  background-color: var(--idle-dark);
+  box-shadow: 3px 3px 6px #33333333;
+
+  opacity: 0.85;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.daily-sticky > div {
+  flex-basis: 25%;
+  flex: 1 0 162px;
+
+  padding: 16px 12px;
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  background-color: var(--fourth-color);
+}
+
+.daily-sticky .sticky-description {
+  justify-content: space-between;
+  padding: 0;
+  background-color: transparent;
+}
+
+.sticky-description .description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.description-title-sticky,
+.personal-header,
+.professional-header,
+.other-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.description-title-sticky h2 {
+  margin-right: 12px;
+}
+
+.description-title-sticky button,
+.total-more button,
+.personal-header button,
+.professional-header button,
+.other-header button {
+  height: fit-content;
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.streak {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bolts {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.bolt {
+  font-family: "Font Awesome 400";
+  font-size: 14px;
+  color: var(--text-color-light);
+}
+
+.bolts .bolt.ok {
+  font-family: "Font Awesome 900";
+  color: var(--idle-deep);
+}
+
+.daily-quest-infos {
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.streak-text {
+  color: var(--idle-deep);
+  font-family: "Saira";
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.daily-sticky h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.daily-sticky ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  font-size: 14px;
+  padding-left: 16px;
+}
+
+.daily-sticky ul li {
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.1;
+}
+
+.daily-sticky ul textarea {
+  width: 100%;
+  height: auto;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 14px;
+  color: var(--idle-deep);
+
+  border: none;
+  outline: none;
+  resize: none;
+  background-color: transparent;
+
+  line-height: 1.1;
+}
+
+/* ITEM CHECKMARK START */
+
+/* .daily-sticky .sticky ul li[data-id], */
+.daily-sticky .sticky ul li[data-id]:has(.sticky-content:not(:empty)) {
+  list-style: none;
+  position: relative;
+}
+
+.daily-sticky .sticky ul li[data-id]:has(.sticky-content:empty) button {
+  display: none;
+}
+
+.daily-sticky .sticky ul li[data-id]:has(.sticky-content:not(:empty)) button {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translate(0, -50%);
+
+  font-size: 14px;
+
+  background-color: transparent;
+  border: none;
+
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.daily-sticky .sticky ul li[data-id].sticky-done .sticky-content {
+  text-decoration: line-through;
+  color: var(--done-color-deep);
+}
+
+.daily-sticky .sticky ul li[data-id].sticky-done button span {
+  color: var(--done-color-deep);
+  font-family: "Font Awesome 900";
+}
+
+/* .daily-sticky .sticky ul li[data-id]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--text-color-bright);
+  border-width: 0 2px 2px 0;
+  transform: translate(0, -60%) rotate(45deg);
+  pointer-events: all;
+  cursor: pointer;
+} */
+
+/* ITEM CHECKMARK END */
+
+.challenge-summary {
+  grid-column: 10 / 13;
+  grid-row: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 48px 12px;
+  background-color: var(--third-color);
+}
+
+.challenges-done {
+  background-color: var(--challenges-done);
+}
+
+.total-description {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+.total-more {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.total-more span {
+  font-family: "Font Awesome 900";
+  color: var(--text-color-light);
+  font-size: 22px;
+}
+
+.total-more button:hover > span {
+  color: var(--text-color);
+}
+
+.challenge-total {
+  display: flex;
+  font-family: "Saira";
+  align-items: baseline;
+  line-height: 1;
+}
+
+p.achieved {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 64px;
+
+  color: var(--idle-deep);
+}
+
+p.total {
+  padding: 0;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+.summary-description {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sum {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sum-about {
+  color: var(--text-color-light);
+}
+
+.sum-number {
+  font-family: "Saira";
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.create-modal-backdrop,
+.edit-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1001;
+
+  will-change: opacity;
+  transition: all 0.3s ease;
+}
+
+.modal div.create-challenge,
+.edit-challenge {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  min-width: 304px;
+  max-width: 372px;
+
+  width: 100%;
+  transform: translate(-50%, -75%);
+  z-index: -2000;
+
+  opacity: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Atkinson Hyperlegible";
+  will-change: transform opacity;
+}
+
+#create-challenge,
+#create-challenge-modal,
+#edit-challenge {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+section.create-challenge {
+  max-height: 542px;
+  grid-column: 1 / 5;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-min {
+  display: none;
+  overflow: hidden;
+}
+
+.create-min-btn {
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  background-color: transparent;
+
+  position: relative;
+}
+
+.create-min button {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--fourth-color);
+
+  gap: 12px;
+
+  border: none;
+  background-color: var(--idle-deep);
+  cursor: pointer;
+  padding: 16px;
+}
+
+.create-min span {
+  font-size: 48px;
+}
+
+.create,
+.edit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.create-name input,
+.create-description textarea,
+.category select,
+.due-date input[type="date"],
+.edit-name input,
+.edit-description textarea {
+  width: 100%;
+  padding: 16px 12px 8px;
+
+  border: none;
+  outline: none;
+  border-radius: 6px;
+
+  color: var(--text-color-mid);
+
+  font-size: 16px;
+  font-family: "Atkinson Hyperlegible";
+}
+
+.create-description textarea,
+.edit-description textarea {
+  resize: none;
+  height: 116px;
+}
+
+.urgency {
+  display: flex;
+  align-items: center;
+}
+
+.urgency input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.urgency input[type="checkbox"]:checked {
+  background-color: var(--text-color);
+}
+
+.urgency input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 10px;
+  border: solid var(--fourth-color);
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -60%) rotate(45deg);
+}
+
+.urgency label {
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.category {
+  position: relative;
+}
+
+.category select {
+  padding-right: 32px;
+  cursor: pointer;
+  appearance: none;
+  color: var(--text-color-mid);
+}
+
+.category::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 10px;
+  width: 10px;
+  border: var(--text-color) solid;
+  border-width: 0 0 3px 3px;
+  transform: translate(-12px, -14px) rotate(-45deg);
+  pointer-events: none;
+}
+
+.due-date label {
+  width: 100%;
+  margin-right: 12px;
+}
+
+.create-category,
+.edit-category,
+.due-date {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.create-error,
+.edit-error {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-error p,
+.edit-error p {
+  width: fit-content;
+  text-align: center;
+  font-size: 14px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background-color: var(--third-color);
+}
+
+.create-error p.failure,
+.edit-error p.failure {
+  color: var(--invalid-dark);
+  background-color: var(--warn-color-light);
+}
+
+.create-error p.success,
+.edit-error p.success {
+  color: var(--done-color-deep);
+  background-color: var(--done-color-light);
+}
+
+.create-btn,
+.edit-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.create-btn button,
+.edit-btn button {
+  border: none;
+  outline: none;
+
+  padding: 12px 24px;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 600;
+  color: var(--fourth-color);
+  background-color: var(--idle-deep);
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.create-btn button:hover,
+.edit-btn button:hover {
+  transform: translateY(-2px);
+  box-shadow: 2px 2px 4px #33333333;
+}
+
+.create-btn button[type="button"],
+.edit-btn button[type="button"] {
+  background-color: var(--first-color);
+}
+
+.challenge-list {
+  background-color: var(--idle-light);
+  grid-column: 5 / 13;
+  grid-row: 2;
+
+  padding: 24px 0;
+
+  overflow: hidden;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-title {
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 0 12px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination button {
+  border: none;
+
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--fourth-color);
+  background-color: var(--second-color);
+  opacity: 0.75;
+
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.pagination button:hover {
+  opacity: 1;
+}
+
+.pagination button:disabled {
+  background-color: var(--third-color);
+}
+
+.pages {
+  font-family: "Saira";
+}
+
+.todos,
+.todo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo {
+  position: relative;
+  border-bottom: var(--text-color-light) 1px solid;
+
+  transition: all 0.3s ease;
+}
+
+.todo-visible {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 12px 24px;
+}
+
+.todo-about button span {
+  font-family: "Font Awesome 300";
+}
+
+.todo-hidden {
+  max-height: 0;
+  width: 100%;
+
+  padding: 0 48px;
+  overflow: hidden;
+
+  display: flex;
+  justify-content: start;
+
+  background-color: var(--idle-dark);
+
+  transition: all 0.3s ease-in-out;
+  will-change: transform;
+}
+
+.todo-hidden p {
+  padding: 12px 0;
+  color: var(--text-color);
+}
+
+.todo-wrapper {
+  max-height: 300px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.todo-wrapper:last-child .todo {
+  border-bottom: none;
+}
+
+/* .todo-wrapper:last-child {
+  box-shadow: 0px 6px 6px #33333316;
+} */
+
+.days-urge {
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-description .days-urge span {
+  font-size: 18px;
+}
+
+.mobile-menu {
+  display: none;
+}
+/* 
+.todo-menu-mobile {
+  position: relative;
+}
+
+.menu-mobile {
+  position: absolute;
+  top: -80px;
+  right: 24px;
+
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+  background-color: var(--fourth-color);
+  box-shadow: 0px 0px 24px var(--second-color);
+
+  z-index: 1000;
+
+  will-change: transform;
+  transition: all 0.3s ease;
+}
+
+.hide-menu-mobile {
+  transform: translateY(60px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mobile-menu .menu-mobile button {
+  padding: 16px;
+
+  font-size: 16px;
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 600;
+  color: var(--text-color);
+
+  border: none;
+  border-top: var(--text-color-light) solid 2px;
+
+  transition: all 0.3s ease;
+}
+
+.mobile-menu .menu-mobile button:first-child {
+  border-top: none;
+}
+
+.mobile-menu .menu-mobile button:first-child:hover {
+  background-color: var(--idle-light);
+  color: var(--idle-deep);
+}
+
+.mobile-menu .menu-mobile button:last-child {
+  background-color: var(--warn-color-light);
+  color: var(--invalid-dark);
+}
+
+.mobile-menu .menu-mobile button:last-child:hover {
+  background-color: var(--warn-color-deep);
+  color: var(--fourth-color);
+} */
+
+.menu-ellipsis span {
+  padding: 4px;
+}
+
+.days-urge span {
+  display: none;
+}
+
+.todo span,
+.menu-ellipsis span {
+  color: var(--text-color-light);
+  font-size: 22px;
+}
+
+span.xmark {
+  font-size: 28px;
+  color: var(--invalid-dark);
+}
+
+.todo button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.todo-del-btn {
+  max-width: 0;
+
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mob-menu-slide {
+  max-width: 0px;
+  /* flex-shrink: 0; */
+
+  display: flex;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.mob-menu-slide button {
+  height: 100%;
+  padding-inline: 32px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.mob-menu-slide button:first-child {
+  color: var(--text-color);
+  background-color: var(--third-color);
+}
+
+.mob-menu-slide button:first-child:hover {
+  background-color: var(--second-color);
+}
+
+.mob-menu-slide button:last-child {
+  color: var(--fourth-color);
+  background-color: var(--invalid-dark);
+}
+
+.todo-del-btn button {
+  height: 100%;
+  padding-inline: 24px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  border: none;
+
+  color: var(--fourth-color);
+  background-color: var(--invalid-dark);
+}
+
+.todo-menu p {
+  display: block;
+}
+
+.todo-about,
+.todo-menu {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.todo-menu {
+  flex-shrink: 0;
+}
+
+.todo-description {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.todo-description button {
+  text-align: left;
+  cursor: auto;
+}
+
+.urgent-mark {
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 24px;
+}
+
+.urgent {
+  border: var(--urgent-color) 2px solid;
+  color: var(--urgent-color);
+}
+
+.small-urgent span {
+  color: var(--urgent-color);
+}
+
+.small-not-urgent span {
+  color: var(--not-urgent-color);
+}
+
+.not-urgent,
+.not-urgent {
+  border: var(--not-urgent-color) 2px solid;
+  color: var(--not-urgent-color);
+}
+
+.todo-description .todo-title {
+  display: inline;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+  color: var(--text-color);
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.todo-description .todo-title:hover {
+  color: var(--idle-deep);
+}
+
+.show-description {
+  max-height: 150px;
+}
+
+.days-left {
+  font-size: 14px;
+  /* color: var(--idle-deep); */
+}
+
+/********************************************/
+/*
+.personal {
+  background-color: var(--personal);
+}
+
+.professional {
+  background-color: var(--professional);
+}
+
+.other {
+  background-color: var(--other);
+} */
+
+.blurred {
+  filter: blur(3px) grayscale(1);
+  transform: scale(1.01);
+}
+
+div.create-challenge.show-modal,
+div.edit-challenge.show-modal {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+
+  /* z-index: 3000; comment later */
+}
+
+.show-modal-backdrop {
+  opacity: 1;
+
+  /* z-index: 2999; comment later */
+}
+
+.slide-del {
+  margin-left: -100px;
+}
+
+.slide {
+  margin-left: -158px;
+}
+
+.open-del {
+  max-width: 100px;
+  width: 100%;
+}
+
+.open-mob-menu {
+  max-width: 158px;
+  width: 100%;
+}
+
+.deleted {
+  max-height: 0px;
+}
+
+/* OVERDUE */
+.overdue,
+.challenge-overdue .todo-title {
+  color: var(--text-color-light);
+}
+
+.challenge-overdue {
+  background-color: var(--overdue);
+}
+
+/* .challenge-overdue .todo {
+  border-color: var(--invalid-dark);
+} */
+
+.challenge-overdue .todo-title,
+.challenge-overdue .todo-title:hover,
+.challenge-overdue .xmark,
+.challenge-overdue .days-urge span {
+  color: var(--text-color-light);
+}
+
+.challenge-overdue .xmark {
+  font-family: "Font Awesome 300";
+}
+
+.challenge-overdue p.urgent-mark {
+  color: var(--text-color-bright);
+  border-color: var(--text-color-bright);
+}
+
+.challenge-overdue .todo-menu button[data-id] span {
+  color: var(--text-color-mid);
+}
+
+.challenge-overdue .todo-hidden {
+  background-color: var(--third-color);
+}
+
+/* END OVERDUE */
+
+/* DONE */
+
+.challenge-done {
+  background-color: var(--done-color-bright);
+}
+
+.challenge-done .todo-about button span {
+  color: var(--done-color-deep);
+  font-family: "Font Awesome 900";
+}
+
+.challenge-done p.urgent-mark {
+  color: var(--done-color-deep);
+  border-color: var(--done-color-deep);
+}
+
+.challenge-done .xmark,
+.challenge-done .todo-menu button[data-id] span,
+.challenge-done .todo-title,
+.challenge-done .todo-title:hover,
+.challenge-done p.days-left.completed,
+.challenge-done .days-urge span {
+  color: var(--done-color-deep);
+}
+
+.challenge-done .mob-menu-slide button:first-child {
+  color: var(--text-color-bright);
+}
+
+.challenge-overdue .btn-disabled,
+.challenge-done .todo-menu button[data-id],
+.challenge-done .mob-menu-slide button:first-child {
+  pointer-events: none;
+}
+
+/* END DONE */
+
+.locked {
+  pointer-events: none;
+}

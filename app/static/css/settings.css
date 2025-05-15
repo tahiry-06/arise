@@ -1,0 +1,523 @@
+.setting-container {
+  gap: 0;
+}
+
+section.side-bar {
+  grid-column: 1 / 4;
+  padding-top: 64px;
+
+  position: relative;
+}
+
+.side-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.side-bar-container div {
+  display: flex;
+
+  padding: 0 12px;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.side-bar-container > div > button {
+  width: 100%;
+  border: none;
+  border-radius: 16px;
+
+  background-color: var(--fourth-color);
+
+  display: flex;
+  align-items: center;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  z-index: 6;
+}
+
+.side-bar-container > div:not(.active) button:hover {
+  background-color: var(--idle-dark);
+}
+
+.side-bar-container > div > button:hover > div p,
+.side-bar-container > div > button:hover > div span {
+  color: var(--text-color-mid);
+}
+
+.side-bar-container > div > button > div {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.side-bar-container > div > button > div > span {
+  font-size: 24px;
+  font-family: "Font Awesome 900";
+}
+
+.side-bar-container > div.active {
+  background-color: var(--third-color);
+  border-radius: 24px 0 0 24px;
+  padding: 12px;
+}
+
+.side-bar-container > div::before,
+.side-bar-container > div::after {
+  content: "";
+  position: absolute;
+  right: 0;
+
+  border-radius: 50%;
+
+  height: 48px;
+  width: 48px;
+
+  opacity: 0;
+
+  background-color: transparent;
+  z-index: 1;
+
+  transition: all 0.1s ease;
+}
+
+.side-bar-container > div.active::after {
+  opacity: 1;
+  top: -48px;
+  box-shadow: 24px 24px 0 var(--third-color);
+}
+
+.side-bar-container > div.active::before {
+  opacity: 1;
+  bottom: -48px;
+  box-shadow: 24px -24px 0 var(--third-color);
+}
+
+.side-bar-container > div p,
+.side-bar-container > div span {
+  color: var(--text-color-light);
+  transition: all 0.3s ease;
+}
+
+.side-bar-container > div.active p,
+.side-bar-container > div.active span {
+  color: var(--text-color);
+}
+
+.side-bar-container > div.active span {
+  font-family: "Font Awesome 400";
+}
+
+.side-bar-container > div.active button {
+  background-color: transparent;
+}
+
+/*******************************/
+
+section.settings {
+  grid-column: 4 / 13;
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px; */
+
+  background-color: var(--third-color);
+  padding: 64px 32px;
+  border-radius: 24px;
+}
+
+/* #account,
+#appearance,
+#todo-setting, */
+section.settings .setting {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+section.settings .setting {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+section.settings .setting.show-setting {
+  opacity: 1;
+  max-height: 1080px; /* have to increase this according to passwrod edit form */
+  overflow: visible;
+}
+
+#account .setting-content,
+#appearance .setting-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#account .setting-description,
+#appearance .setting-description,
+#todo-setting .setting-description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--text-color-light);
+}
+
+#account .setting-main,
+#account .setting-pwd {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#account .setting-pwd button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--fourth-color);
+
+  background-color: var(--first-color);
+
+  transition: all 0.3s ease;
+}
+
+#account .setting-pwd button:hover {
+  background-color: var(--idle-deep);
+}
+
+#account .setting-pwd-form .setting-password,
+#account .informations {
+  background-color: var(--fourth-color);
+  padding: 32px 24px;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#account .setting-pwd-form .setting-password #form-password-edit {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#form-password-edit .pwd-edit-inputs,
+#form-password-edit .pwd-edit-inputs > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#form-password-edit .pwd-edit-inputs > div {
+  gap: 8px;
+}
+
+#account .detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#account .detail-field p {
+  width: 100%;
+  /* transition: all 0.3s ease; */
+}
+
+#account .detail-field p.display-edit {
+  /* background-color: cadetblue; */
+  width: 0;
+  height: 20px;
+  overflow: hidden;
+}
+
+#form-password-edit .pwd-edit-inputs > div input,
+#account .detail input {
+  display: block;
+
+  width: 0;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin-right: 12px;
+
+  font-family: "Atkinson Hyperlegible";
+  color: var(--text-color-mid);
+  font-size: 16px;
+
+  background-color: transparent;
+  border-bottom: 2px solid var(--text-color-mid);
+}
+
+#form-password-edit .pwd-edit-inputs > div input,
+#account .detail input.edit {
+  width: 100%;
+  padding: 3px 0 0 0;
+}
+
+#form-password-edit .pwd-edit-inputs > div input {
+  max-width: 300px;
+}
+
+#form-password-edit .pwd-edit-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+#form-password-edit .pwd-edit-buttons button {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+#form-password-edit .pwd-edit-buttons button:hover {
+  opacity: 1;
+}
+
+#form-password-edit .pwd-edit-buttons button[type="submit"] {
+  background-color: var(--idle-deep);
+}
+
+#account .detail-field {
+  max-width: 300px;
+  width: 100%;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  padding: 0 12px;
+  /* 
+  background-color: lime; */
+}
+
+#account .detail-field button {
+  justify-self: end;
+
+  border: none;
+  padding: 4px;
+
+  color: var(--text-color-light);
+  font-size: 16px;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+#account .detail-field button:hover {
+  color: var(--idle-deep);
+}
+
+#account .detail-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#account .detail-label span {
+  color: var(--text-color-light);
+}
+
+/* #account .setting-pwd-form .setting-password{
+
+} */
+
+#account .setting-delete {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#account .setting-delete .warnings {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#account .del-btn button,
+#appearance-form .setting-buttons button {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--fourth-color);
+
+  background-color: var(--first-color);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#account .del-btn button:hover {
+  background-color: var(--invalid-dark);
+}
+
+#appearance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+#appearance-form div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  position: relative;
+}
+
+#appearance-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 145px;
+
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+
+  font-family: "Atkinson Hyperlegible";
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+#appearance-form select:focus {
+  outline: none;
+}
+
+#appearance-form .theme-select::after {
+  content: "caret-down";
+  position: absolute;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: fit-content;
+  width: fit-content;
+
+  font-family: "Font Awesome 900";
+
+  pointer-events: none;
+}
+
+#appearance-form .setting-color fieldset {
+  border: none;
+  display: flex;
+  gap: 24px;
+
+  background-color: var(--white);
+  padding: 32px;
+
+  border-radius: 16px;
+}
+
+#appearance-form input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  position: relative;
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  background-color: var(--radio-color);
+
+  cursor: pointer;
+}
+
+#appearance-form input[type="radio"]:checked {
+  border: 4px solid var(--text-color-mid);
+}
+
+#appearance-form input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+
+  background-color: var(--text-color-mid);
+}
+
+#appearance-form input[type="radio"]:checked::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--fourth-color);
+  border-width: 0 2px 2px 0;
+  transform: translate(-90%, -50%) rotate(45deg);
+}
+
+#appearance-form input[type="radio"]#red {
+  --radio-color: #ea2c62;
+}
+
+#appearance-form input[type="radio"]#chill {
+  --radio-color: #3674b5;
+}
+
+#appearance-form input[type="radio"]#zen {
+  --radio-color: #a5dd9b;
+}
+
+#appearance-form input[type="radio"]#sunny {
+  --radio-color: #fff085;
+}
+
+#appearance-form input[type="radio"]#fade {
+  --radio-color: #b4b4b8;
+}
+
+#appearance-form input[type="radio"]#default {
+  --radio-color: #ff9735;
+}
+
+#appearance-form .setting-buttons {
+  flex-direction: row;
+  margin-top: 64px;
+}
+
+#appearance-form .setting-buttons button[type="submit"]:hover {
+  background-color: var(--idle-deep);
+}
+
+#appearance-form .setting-buttons button[type="button"] {
+  background-color: var(--white);
+  color: var(--first-color);
+}
+
+#appearance-form .setting-buttons button[type="button"]:hover {
+  background-color: var(--fourth-color);
+}
+
+.hide-label {
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: absolute;
+}

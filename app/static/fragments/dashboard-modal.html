@@ -1,0 +1,93 @@
+<div class="modal">
+  <div class="create-modal-backdrop"></div>
+  <div class="create-challenge">
+    <div class="create">
+      <h2 class="create-title">create new challenge.</h2>
+      <form id="create-challenge-modal">
+        <div class="create-name">
+          <input type="text" name="name" id="name" placeholder="name your challenge." autocomplete="off" />
+        </div>
+
+        <div class="create-description">
+          <textarea name="description" id="description" placeholder="describe your challenge."></textarea>
+        </div>
+
+        <div class="create-category">
+          <div class="urgency">
+            <input type="checkbox" name="urge" id="mod-urge" />
+            <label for="mod-urge">mark as urgent.</label>
+          </div>
+          <div class="category">
+            <select name="category" id="category">
+              <option value="">category.</option>
+              <option value="personal">personal</option>
+              <option value="professional">professional</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="due-date">
+          <label for="mod-due-date">best done before</label>
+          <input type="date" name="due-date" id="mod-due-date" />
+        </div>
+
+        <div class="create-error">
+          <p class="error-message">please provide description for your challenge.</p>
+        </div>
+
+        <div class="create-btn">
+          <button type="submit">create.</button>
+          <button type="button">close.</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="edit-modal">
+  <div class="edit-modal-backdrop"></div>
+  <div class="edit-challenge">
+    <div class="edit">
+      <h2 class="edit-title">edit your challenge.</h2>
+      <form id="edit-challenge">
+        <div class="edit-name">
+          <input type="text" name="name" id="edit-name" placeholder="name your challenge." autocomplete="off" />
+        </div>
+
+        <div class="edit-description">
+          <textarea name="description" id="edit-description" placeholder="describe your challenge."></textarea>
+        </div>
+
+        <div class="edit-category">
+          <div class="urgency">
+            <input type="checkbox" name="urge" id="edit-urge" />
+            <label for="edit-urge">mark as urgent.</label>
+          </div>
+          <div class="category">
+            <select name="category" id="edit-category">
+              <option value="">category.</option>
+              <option value="personal">personal</option>
+              <option value="professional">professional</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="due-date">
+          <label for="edit-due-date">best done before</label>
+          <input type="date" name="due-date" id="edit-due-date" />
+        </div>
+
+        <div class="edit-error">
+          <p class="error-message">please be careful editing your challenge.</p>
+        </div>
+
+        <div class="edit-btn">
+          <button type="submit">save.</button>
+          <button type="button">close.</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

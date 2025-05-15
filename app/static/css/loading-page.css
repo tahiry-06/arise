@@ -1,0 +1,136 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.loader-container {
+  max-width: 960px;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 80px;
+}
+
+.header {
+  background-color: #eaeaea;
+  height: 56px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 100;
+}
+
+.content {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.area {
+  background-color: #fafafa;
+  border-radius: 16px;
+}
+
+/* have to take the correct height */
+
+.area-1 {
+  grid-area: "area-1";
+  grid-column: 1 / 10;
+  grid-row: 1;
+  width: 100%;
+  height: 275px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background-color: transparent;
+}
+
+.area-1 .top {
+  height: 48px;
+  width: 100%;
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.area-1 .top .h-1 {
+  height: 24px;
+  width: 50%;
+  border-radius: 16px;
+  background-color: #fafafa;
+}
+
+.area-1 .top .p {
+  height: 16px;
+  width: 80%;
+  border-radius: 16px;
+  background-color: #fafafa;
+}
+
+.area-1 .bottom {
+  flex-grow: 1;
+  background-color: #fafafa;
+  border-radius: 16px;
+}
+
+.area-2 {
+  grid-column: 10 / 13;
+  grid-row: 1;
+}
+
+.area-3 {
+  grid-column: 1 / 5;
+  grid-row: 2;
+
+  width: 100%;
+  height: 500px;
+}
+
+.area-4 {
+  grid-column: 5 / 13;
+  grid-row: 2;
+}
+
+.area-1 .top .h-1,
+.area-1 .top .p,
+.area-1 .bottom,
+.area-2,
+.area-3,
+.area-4 {
+  background: linear-gradient(to right, #fafafa, #eee, #fafafa);
+  background-size: 200%;
+  animation: loading_progress 1.6s linear infinite;
+}
+
+.content.loading {
+  animation: loading 3s linear infinite;
+}
+
+@keyframes loading {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes loading_progress {
+  from {
+    background-position: 0 center;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}

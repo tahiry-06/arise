@@ -1,0 +1,167 @@
+<div class="main-container">
+  <section class="welcome">
+    <div class="welcome-text">
+      <h1>
+        welcome back,
+        <div class="user-name" style="display: inline"></div>
+      </h1>
+      <p>design your future now and start listing what needs to be done.</p>
+    </div>
+    <div class="daily-sticky">
+      <div class="sticky-description">
+        <div class="description">
+          <div class="description-title-sticky">
+            <h2>daily stickies.</h2>
+            <button type="button"><span class="daily-quest-infos">square-question</span></button>
+          </div>
+          <p>consistency helps you strengthen your discipline.</p>
+        </div>
+        <div class="streak">
+          <div class="bolts">
+            <!-- <span class="bolt ok">bolt</span>
+            <span class="bolt ok">bolt</span>
+            <span class="bolt ok">bolt</span>
+            <span class="bolt ok">bolt</span>
+            <span class="bolt ok">bolt</span>
+            <span class="bolt ok">bolt</span>
+            <span class="bolt">bolt</span> -->
+          </div>
+          <p class="streak-text">1</p>
+        </div>
+      </div>
+
+      <div class="sticky personal">
+        <div class="personal-header">
+          <h3 class="personal-title">personal</h3>
+          <button type="button"><span>lock</span></button>
+        </div>
+        <div class="personal-lists locked">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sticky professional">
+        <div class="professional-header">
+          <h3 class="professional-title">professional</h3>
+          <button type="button"><span>lock</span></button>
+        </div>
+        <div class="professional-lists locked">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+      <div class="sticky other">
+        <div class="other-header">
+          <h3 class="other-title">other</h3>
+          <button type="button"><span>lock</span></button>
+        </div>
+        <div class="other-lists locked">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="challenge-summary">
+    <div class="total-description">
+      <div class="total-more">
+        <div class="challenge-total">
+          <p class="achieved">0</p>
+          <p class="total">/</p>
+        </div>
+        <button type="button"><span>chart-simple</span></button>
+      </div>
+      <div class="progress-bar">
+        <div class="bar done"></div>
+        <div class="bar incomplete"></div>
+        <div class="bar pending"></div>
+      </div>
+    </div>
+    <div class="summary-description">
+      <div class="sum">
+        <p class="sum-about">in progress</p>
+        <p class="sum-number in-progress">5</p>
+      </div>
+      <div class="sum">
+        <p class="sum-about">importants</p>
+        <p class="sum-number important">3</p>
+      </div>
+      <div class="sum">
+        <p class="sum-about">overdue.</p>
+        <p class="sum-number overdue">1</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="create-challenge">
+    <div class="create">
+      <h2 class="create-title">create new challenge.</h2>
+      <form id="create-challenge">
+        <div class="create-name">
+          <input type="text" name="name" id="name" placeholder="name your challenge." autocomplete="off" />
+        </div>
+        <div class="create-description">
+          <textarea name="description" id="description" placeholder="describe your challenge."></textarea>
+        </div>
+        <div class="create-category">
+          <div class="urgency">
+            <input type="checkbox" name="urge" id="urge" />
+            <label for="urge">mark as urgent.</label>
+          </div>
+          <div class="category">
+            <select name="category" id="category">
+              <option value="">category.</option>
+              <option value="personal">personal</option>
+              <option value="professional">professional</option>
+              <option value="other">other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="due-date">
+          <label for="due-date">best done before</label>
+          <input type="date" name="due-date" id="due-date" />
+        </div>
+        <div class="create-error">
+          <p class="error-message">please provide description for your challenge.</p>
+        </div>
+        <div class="create-btn">
+          <button type="submit">create.</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section class="create-min">
+    <div class="create-min-btn">
+      <button type="button">
+        <h2>create new challenge.</h2>
+        <span>plus</span>
+      </button>
+    </div>
+  </section>
+
+  <section class="challenge-list">
+    <div class="list">
+      <div class="list-title">
+        <h2>your current challenges.</h2>
+        <div class="pagination">
+          <button type="button"><span>angle-left</span></button>
+          <p class="pages">1/1</p>
+          <button type="button"><span>angle-right</span></button>
+        </div>
+      </div>
+      <div class="todos"></div>
+    </div>
+  </section>
+</div>
